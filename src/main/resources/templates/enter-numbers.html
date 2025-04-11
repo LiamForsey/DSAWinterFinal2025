@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Enter Numbers</title>
+    <link rel="stylesheet" href="/Static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Binary Search Tree Generator</h1>
+
+    <form th:action="@{/process-numbers}" method="post">
+        <div class="form-group">
+            <label for="numbers">Enter numbers (comma-separated):</label>
+            <input type="text" id="numbers" name="numbers" class="form-control" required>
+        </div>
+        <button type="submit" class="btn">Generate BST</button>
+        <button type="submit" formaction="@{/balanced-tree}" class="btn btn-secondary">
+            Generate Balanced BST
+        </button>
+    </form>
+
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+
+    <div class="nav">
+        <a th:href="@{/previous-trees}" class="btn">View Previous Trees</a>
+        <a th:href="@{/}" class="btn">Home</a>
+    </div>
+</div>
+</body>
+</html>

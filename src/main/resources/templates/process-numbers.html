@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>BST Result</title>
+    <link rel="stylesheet" href="/Static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>BST Result</h1>
+
+    <div th:if="${error}" class="error" th:text="${error}"></div>
+
+    <div th:unless="${error}">
+        <p><strong>Input:</strong> <span th:text="${inputNumbers}"></span></p>
+        <p th:if="${balanced}"><em>(Balanced Tree)</em></p>
+
+        <h3>Tree Structure:</h3>
+        <div class="tree-structure" th:text="${treeStructure}"></div>
+
+        <h3>Formatted View:</h3>
+        <pre class="tree-formatted" th:text="${formattedTree}"></pre>
+    </div>
+
+    <div class="nav">
+        <a th:href="@{/enter-numbers}" class="btn">New BST</a>
+        <a th:href="@{/previous-trees}" class="btn">View All Trees</a>
+        <a th:href="@{/}" class="btn">Home</a>
+    </div>
+</div>
+</body>
+</html>

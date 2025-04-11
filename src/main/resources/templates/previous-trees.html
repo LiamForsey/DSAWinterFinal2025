@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Previous Trees</title>
+    <link rel="stylesheet" href="/Static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Previously Generated Trees</h1>
+
+    <div th:each="tree : ${trees}">
+        <h3>Input: <span th:text="${tree.inputNumbers}"></span></h3>
+        <div class="tree-structure" th:text="${tree.treeStructure}"></div>
+        <hr>
+    </div>
+
+    <div class="nav">
+        <a th:href="@{/enter-numbers}" class="btn">Create New BST</a>
+        <a th:href="@{/}" class="btn">Home</a>
+    </div>
+</div>
+</body>
+</html>
